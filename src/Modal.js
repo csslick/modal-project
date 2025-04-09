@@ -1,3 +1,9 @@
+/**
+ * Modal 컴포넌트를 생성하는 함수
+ * @param {string} title - 모달의 제목
+ * @param {string} content - 모달의 내용
+ * @returns {string} - 모달의 HTML 문자열
+ */
 const Modal = function (title="title", content="content") {
   const modal_html = `
   <div class="modal fixed h-screen w-screen z-99 flex justify-center items-center">
@@ -13,6 +19,5 @@ const Modal = function (title="title", content="content") {
 `
   return modal_html
 }
-
 
 export default Modal;
