@@ -1,23 +1,26 @@
-  /**
-   * Modal 컴포넌트를 생성하는 함수
-   * @param {string} title - 모달의 제목
-   * @param {string} content - 모달의 내용
-   * @returns {string} - 모달의 HTML 문자열
-   */
 const Modal = function (title="title", content="content") {
   const modal_html = `
-  <div class="modal fixed h-screen w-screen z-99 flex justify-center items-center">
+  <div class="modal fixed h-screen w-screen left-0 top-0 z-99 flex justify-center items-center">
     <div class="modal-overlay fixed w-screen h-screen bg-black border-red-500 opacity-50"></div>
     <div class="modal-content bg-white relative z-999 w-[490px] rounded-[4px] p-5">
       <h3 class="text-xl font-bold mb-2">${title}</h3>
       <p class="mb-4">${content}</p>
       <footer class="flex justify-end">
-          <button class="modal-close bg-blue-500 text-white px-4 py-2 rounded-[4px]">close</button>  
+          <button id="modal-close" class="modal-close btn">close</button>  
       </footer>
     </div>
   </div>
 `
-  return modal_html
+  // return modal_html
+  // document.body.innerHTML += modal_html
+  document.body.insertAdjacentHTML('beforeend', modal_html)
+  
+  // 모달창 닫기
+  const modalCloseBtn = document.querySelector('#modal-close');
+  modalCloseBtn.addEventListener('click', function() {
+    document.querySelector('.modal').remove()
+  })
+  
 }
 
 export default Modal;
