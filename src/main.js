@@ -1,10 +1,16 @@
 import './style.css'
-
+import Modal from './Modal'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <h1 class="text-3xl font-bold">Modal</h1>
-    
+    <button id="open-modal" class="btn">Open Modal</button>
   </div>
 `
+ 
+// 모달 열기 버튼
+const openModalBtn = document.querySelector('#open-modal');
 
+// 모달 열기 이벤트 추가  
+openModalBtn.addEventListener('click', function() {
+  Modal("Modal Title", "Modal Content")
+})
