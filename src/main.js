@@ -12,6 +12,5 @@ const openModalBtn = document.querySelector('#open-modal');
 
 // 모달 열기 이벤트 추가  
 openModalBtn.addEventListener('click', function() {
-  Modal('title', 'content')
-
+  Modal("Modal Title", "Modal Content")
 })

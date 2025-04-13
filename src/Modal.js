@@ -13,6 +13,8 @@ const Modal = function (title="title", content="content") {
 `
   // return modal_html
   // document.body.innerHTML += modal_html
+
+  // 모달창이 열려 있는지 확인
   document.body.insertAdjacentHTML('beforeend', modal_html)
   
   // 모달창 닫기
