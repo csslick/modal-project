@@ -14,7 +14,11 @@ const Modal = function (title="title", content="content") {
   // return modal_html
   // document.body.innerHTML += modal_html
 
-  // 모달창이 열려 있는지 확인
+  // 모달창이 이미 열려 있는지 확인
+  if (document.querySelector('.modal')) {
+    console.warn('Modal is already open.'); // Optional: Log a warning or provide feedback
+    return; // Exit the function if a modal already exists
+  }
   document.body.insertAdjacentHTML('beforeend', modal_html)
   
   // 모달창 닫기
